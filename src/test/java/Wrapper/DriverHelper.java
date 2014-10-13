@@ -19,7 +19,7 @@ public class DriverHelper {
 	}
 	
 	public RemoteWebDriver getRemoteWebDriver(){
-		return new RemoteWebDriver(new DesiredCapabilities())
+		return new RemoteWebDriver(new DesiredCapabilities());
 	}
 	
 	public AppiumDriver getAppiumBrowesrDriver(String host,String port,String platformName,String platformVersion,String deviceName,String browserName) throws MalformedURLException,NullPointerException{
