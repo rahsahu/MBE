@@ -8,6 +8,8 @@
 
 
 	<properties>
+
+     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<appium-version>1.7.0</appium-version>
 		<selenium-version>2.43.1</selenium-version>
 		<junit-version>4.11</junit-version>
@@ -18,7 +20,7 @@
 		<cglib-version>3.1</cglib-version>
 		<resources.encoding>UTF-8</resources.encoding>
 		<sources.encoding>UTF-8</sources.encoding>
-		<TESTNG_FILE>src\test\resources\suite\testng-customsuite.xml</TESTNG_FILE>
+		<TESTNG_FILE>testng-customsuite.xml</TESTNG_FILE>
 	</properties>
 
  <build>
@@ -31,7 +33,7 @@
         <configuration>
 
           <suiteXmlFiles>
-            <suiteXmlFile>${TESTNG_FILE}</suiteXmlFile>
+            <suiteXmlFile>src\test\resources\suite\${TESTNG_FILE}</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
