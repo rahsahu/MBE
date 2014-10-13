@@ -18,7 +18,7 @@
 		<cglib-version>3.1</cglib-version>
 		<resources.encoding>UTF-8</resources.encoding>
 		<sources.encoding>UTF-8</sources.encoding>
-		<TESTNG_FILE>/src/test/resources/suite/testng.xml</TESTNG_FILE>
+		<TESTNG_FILE>src\test\resources\suite\testng-customsuite.xml</TESTNG_FILE>
 	</properties>
 
  <build>
@@ -31,7 +31,7 @@
         <configuration>
 
           <suiteXmlFiles>
-            <suiteXmlFile>E:\github\MBE\src\test\resources\suite\testng-customsuite.xml</suiteXmlFile>
+            <suiteXmlFile>${TESTNG_FILE}</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
