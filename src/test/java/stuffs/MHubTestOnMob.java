@@ -19,7 +19,7 @@ public class MHubTestOnMob extends DriverCommonAction {
 
 	SoftAssert softAssert=new SoftAssert();
 	
-	@Test(dataProvider = "MHubTest", groups = { "MHubTest", "all", "app" })
+	@Test(dataProvider = "MHubTest")
 	public void carrierIDONE(String url) throws Exception {
 		DesiredCapabilities capabilities = DesiredCapabilities.android();
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
@@ -27,7 +27,7 @@ public class MHubTestOnMob extends DriverCommonAction {
 		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "15e0b14");
 		capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
 	//	capabilities.setCapability("automationName", "Appium");
-		URL curl = new URL("http://IN1W7L-522261.ttg.global:4723/wd/hub");
+		URL curl = new URL("http://IN1W7D-100089.ttg.global:4723/wd/hub");
 		AppiumDriver driver = new AppiumDriver(curl, capabilities);
 	
 		MHubPage page=new MHubPage();
