@@ -25,7 +25,7 @@ public class CarrierTest extends DriverCommonAction {
 
 
 
-	@Test(dataProvider = "DPTWO", groups = { "TWO" } )
+	@Test(dataProvider = "DPTWO", groups = { "two","allcarrier" } )
 	public void carrierIDTWO(String url,String pid) throws Exception {
 		String restURL="&territory=AU&mobile_carrier_id=2";
 		
@@ -47,7 +47,7 @@ public class CarrierTest extends DriverCommonAction {
 	
 	}
 
-	@Test(dataProvider = "DPAMOUNT", groups = { "ONE" })
+	@Test(dataProvider = "DPAMOUNT", groups = { "one","allcarrier" })
 	public void carrierIDONE(String url,String pid,String amount) throws Exception {
 		String restURL="&territory=AU&mobile_carrier_id=1";
 		
@@ -77,7 +77,7 @@ public class CarrierTest extends DriverCommonAction {
 	}
 
 	
-	@Test(dataProvider = "DPTWO", groups = { "THREE" })
+	@Test(dataProvider = "DPTWO", groups = { "three","allcarrier" })
 	public void carrierIDTHREE(String url,String pid) throws Exception {
 		String restURL="&territory=AU&mobile_carrier_id=3";
 		

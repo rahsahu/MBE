@@ -6,6 +6,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -13,19 +14,27 @@ import tests.DriverCommonAction;
 import Wrapper.DriverWrapper;
 import Wrapper.MHubPage;
 import Wrapper.MyCapibilities;
+import Wrapper.UtilWrapper;
 
 
-public class MHubTestOnMob extends DriverCommonAction {
+public class MHubTestOnMob  {
 
 	SoftAssert softAssert=new SoftAssert();
-	
+	@DataProvider(name = "MHubTest")
+	public static Object[][] createDataMHubTest() {
+		final String dir = System.getProperty("user.dir");
+		System.out.println("current dir = " + dir);
+		return UtilWrapper.getTableArray(dir
+				+ "/src/test/resources/testdata/LINKS.xls", "product", "MHubTest");
+
+	}
 	@Test(dataProvider = "MHubTest")
 	public void carrierIDONE(String url) throws Exception {
 		DesiredCapabilities capabilities = DesiredCapabilities.android();
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "4.4.2");
-		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "15e0b14");
-		capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator");
+		capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Browser");
 	//	capabilities.setCapability("automationName", "Appium");
 		URL curl = new URL("http://IN1W7D-100089.ttg.global:4723/wd/hub");
 		AppiumDriver driver = new AppiumDriver(curl, capabilities);
