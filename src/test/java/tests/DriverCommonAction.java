@@ -4,7 +4,9 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 
@@ -41,9 +43,9 @@ public class DriverCommonAction {
 
 	}
 	
-	@BeforeTest(groups={"loadDriver"},alwaysRun=true)
+	@BeforeMethod(groups={"loadDriver"},alwaysRun=true)
 	public void LoadDriverBeforeTest() {
-		System.out.println("Before Test is getting called");
+		System.out.println("Before Metnod is getting called");
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setBrowserName("firefox");
 		capabilities.setPlatform(Platform.WINDOWS);
@@ -104,7 +106,11 @@ public class DriverCommonAction {
 				+ "/src/test/resources/testdata/LINKS.xls", "product", "InGameTest");
 
 	}
-
+	@AfterMethod(alwaysRun=true)
+	public void closeBrowser() {
+		driver.quit();
+	}
+	
 	@AfterTest(alwaysRun=true)
 	public void teardown() {
 		System.out.println("After Test is getting called");
