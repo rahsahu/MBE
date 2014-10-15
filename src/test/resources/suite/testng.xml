@@ -10,8 +10,9 @@
 				<include name="app" />
 			</run>
 		</groups>
-		<classes>
-			<class name="tests.*" />
-		</classes>
+		<packages>
+		<package name="tests.*"></package>
+		</packages>
+
 	</test><!-- Default test -->
 </suite>

@@ -55,7 +55,7 @@ public class MProovTest extends DriverCommonAction {
 
 		String aURL = url;
 		System.out.println(aURL);
-		driver.manage().deleteAllCookies();
+	//	driver.manage().deleteAllCookies();
 		driver.get(aURL);
 		driver.manage().window().maximize();
 		//Thread.sleep(9000);
