@@ -4,12 +4,10 @@ package tests;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import Wrapper.ContactUsPage;
 import Wrapper.DriverWrapper;
 import Wrapper.ProSportsContactUsPage;
 import Wrapper.ProSportsPrivacyPolicyPage;
 import Wrapper.ProSportsTermAndConditionPage;
-import Wrapper.TermAndConditionPage;
 import Wrapper.prosportsPaymentPage;
 
 public class ProSportsPIDTest extends DriverCommonAction {
