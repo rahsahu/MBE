@@ -15,7 +15,8 @@ public class NLGPaymentPage extends BasePaymentPage{
 	public String googleWalletHeadingValue="Subscribe for only $19.99/30 days";
 			
 	
-
+	public By googleWalletSubmitButton=By.xpath("//div[@id='tab_google_wallet']");
+	public By googleWalletHeading=By.xpath("//div[@id='tab_google_wallet']/h3");
 	//form[@id='subscribe']/p[2]
 	//Contact Us
 	//h2

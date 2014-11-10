@@ -145,10 +145,10 @@ public class DriverCommonAction {
 		String Environment = context.getCurrentXmlTest().getParameter("Environment");
 		if(Environment.equalsIgnoreCase("stage"))
 		return UtilWrapper.getTableArray(dir
-				+ "/src/test/resources/testdata/LINKS.xls", "Joocey", "StagePid");
+				+ "/src/test/resources/testdata/LINKS.xls", "prosports", "StagePid");
 		else
 			return UtilWrapper.getTableArray(dir
-					+ "/src/test/resources/testdata/LINKS.xls", "Joocey", "EnvPid");
+					+ "/src/test/resources/testdata/LINKS.xls", "prosports", "EnvPid");
 
 	}
 	
