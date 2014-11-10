@@ -24,10 +24,10 @@ public class BasePaymentPage {
 	public By mobileFormP2=By.xpath("//form[@id='subscribe']/p[2]");
 
 	public By PaypalSubmitButton=By.xpath("//img[@id='Login-paypal-button']");
-	public By PaypalFormHeading=By.xpath("//div[@id='tab_psms']/h3");
+	public By PaypalFormHeading=By.xpath("//div[@id='tab_paypal']/h3");
 
-	public By googleWalletSubmitButton=By.xpath("//div[@id='tab_google_wallet']/h3");
-	public By googleWalletHeading=By.xpath("//img[@alt='Log In with Google Wallet']");
+	public By googleWalletSubmitButton=By.xpath("//div[@id='tab_google_wallet']");
+	public By googleWalletHeading=By.xpath("//img[@alt='Log In with Google Wallet']/h3");
 	
 	
 //	Terms and Conditions 
