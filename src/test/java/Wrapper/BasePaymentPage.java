@@ -27,7 +27,7 @@ public class BasePaymentPage {
 	public By PaypalFormHeading=By.xpath("//div[@id='tab_paypal']/h3");
 
 	public By googleWalletSubmitButton=By.xpath("//div[@id='tab_google_wallet']");
-	public By googleWalletHeading=By.xpath("//img[@alt='Log In with Google Wallet']/h3");
+	public By googleWalletHeading=By.xpath("//div[@id='tab_google_wallet']/h3");
 	
 	
 //	Terms and Conditions 
