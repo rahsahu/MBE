@@ -11,6 +11,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class MyCapibilities extends DesiredCapabilities{
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public MyCapibilities()
 	{
 		setJavascriptEnabled(true);

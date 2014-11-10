@@ -1,6 +1,5 @@
 package Wrapper;
 
-import java.io.File;
 import java.util.Iterator;
 
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
@@ -11,12 +10,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.*;
-import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
-
-import tests.DriverCommonAction;
-import jxl.*;
 
 public class DriverWrapper {
 
@@ -79,7 +74,7 @@ public class DriverWrapper {
 	}
 
 	public void waitForPageToLoad(By by, long waitInMilliSeconds) {
-		WebElement element = (new WebDriverWait(getDriver(), waitInMilliSeconds))
+		(new WebDriverWait(getDriver(), waitInMilliSeconds))
 				.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 

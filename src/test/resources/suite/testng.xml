@@ -11,7 +11,7 @@
 
 	    <groups>
 			<run>
-				<include name="prosportsPayment" />
+				<include name="paymentAll" />
 			</run>
 		</groups>
 		<packages>

@@ -1,19 +1,7 @@
 package Wrapper;
 
 import java.io.File;
-import java.util.Iterator;
 
-import com.gargoylesoftware.htmlunit.ElementNotFoundException;
-import com.google.common.base.Function;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.*;
-import org.testng.Assert;
-
-import tests.DriverCommonAction;
 import jxl.*;
 
 public class UtilWrapper {
