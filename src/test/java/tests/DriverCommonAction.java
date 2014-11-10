@@ -152,4 +152,34 @@ public class DriverCommonAction {
 
 	}
 	
+	
+	@DataProvider(name = "JooceyEmpty")
+	public static  Object[][] createDataJooceyEmpty(ITestContext context) {
+		final String dir = System.getProperty("user.dir");
+		
+		System.out.println("current dir = " + dir);
+		String Environment = context.getCurrentXmlTest().getParameter("Environment");
+		if(Environment.equalsIgnoreCase("stage"))
+		return UtilWrapper.getTableArray(dir
+				+ "/src/test/resources/testdata/LINKS.xls", "Joocey", "StagePid");
+		else
+			return UtilWrapper.getTableArray(dir
+					+ "/src/test/resources/testdata/LINKS.xls", "Joocey", "EnvPid");
+
+	}
+	
+	@DataProvider(name = "TelstraOnDeskEmpty")
+	public static  Object[][] createDataTelstraOnDeskEmpty(ITestContext context) {
+		final String dir = System.getProperty("user.dir");
+		
+		System.out.println("current dir = " + dir);
+		String Environment = context.getCurrentXmlTest().getParameter("Environment");
+		if(Environment.equalsIgnoreCase("stage"))
+		return UtilWrapper.getTableArray(dir
+				+ "/src/test/resources/testdata/LINKS.xls", "TelstraOnDesk", "StagePid");
+		else
+			return UtilWrapper.getTableArray(dir
+					+ "/src/test/resources/testdata/LINKS.xls", "TelstraOnDesk", "EnvPid");
+
+	}
 }
