@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
 import tests.DriverCommonAction;
@@ -69,6 +70,13 @@ public class DriverWrapper {
 
 		}
 	}
+	
+	public void SwitchWindow()
+	{
+		for(String winHandle : getDriver().getWindowHandles()){
+			getDriver().switchTo().window(winHandle);
+		}
+	}
 
 	public void waitForPageToLoad(By by, long waitInMilliSeconds) {
 		WebElement element = (new WebDriverWait(getDriver(), waitInMilliSeconds))
@@ -85,9 +93,9 @@ public class DriverWrapper {
 		Wait<WebDriver> wait = new WebDriverWait(getDriver(), 1000);
 		wait.until(new Function<WebDriver, Boolean>() {
 			public Boolean apply(WebDriver driver) {
-				System.out.println("Current Window State       : "
-						+ String.valueOf(((JavascriptExecutor) driver)
-								.executeScript("return document.readyState")));
+//				System.out.println("Current Window State       : "
+//						+ String.valueOf(((JavascriptExecutor) driver)
+//								.executeScript("return document.readyState")));
 				return String.valueOf(
 						((JavascriptExecutor) driver)
 								.executeScript("return document.readyState"))
@@ -118,29 +126,42 @@ public class DriverWrapper {
 			element=getDriver().findElement(by);
 			
 					} catch (ElementNotFoundException e) {
+						Reporter.log("<Font Color=\"RED\">Error : Element : "+by+" not found Present</Font>");
 						softAssert.assertEquals(true, false);
 				}	
 		return element;
 	}
 	
+	public WebElement elementPresent(By by)
+	{
+		//Reporter.log("Verifying Element : "+by+" Present");
+		MyReporter.VerifyingPresent(by.toString());
+			return findElement(by);
+	}	
+	
 	public void verifyHelplineMessage()
 	{
+		
 		if(!getDriver().getPageSource().contains(helplineMessageString))
 			softAssert.assertEquals(true, false);
 	}
 	
 	public void verifyText(By Byelement,String text){
-		System.out.println("Verifying "+Byelement +"  should have "+ text +" value.");
+		MyReporter.Verifying(Byelement.toString(),findElement(Byelement).getText() ,text);
 		if(!findElement(Byelement).getText().equalsIgnoreCase(text))
-		{	softAssert.assertEquals(true, false);
+		{	
+			Reporter.log("<Font Color=\"RED\">verification of "+Byelement +"  should have "+ text +" value failed </Font>");
+			softAssert.assertEquals(true, false);
 			System.err.println("verification of "+Byelement +"  should have "+ text +" value failed " );
 		}
 	}
 	
 	public void verifyContainText(By Byelement,String text){
-		System.out.println("Verifying "+Byelement +"  should have "+ text +" value.");
+		MyReporter.Verifying(Byelement.toString(),findElement(Byelement).getText() ,text);
 		if(!findElement(Byelement).getText().contains(text))
-		{	softAssert.assertEquals(true, false);
+		{	
+			Reporter.log("<Font Color=\"RED\">verification of "+Byelement +"  should have "+ text +" value failed</Font> ");
+			softAssert.assertEquals(true, false);
 			System.err.println("verification of "+Byelement +"  should have "+ text +" value failed " );
 		}
 	}
@@ -155,4 +176,49 @@ public class DriverWrapper {
 		verifyText(ByMProovefooter5XPATH, "Contact Us");
 	}
 	
+	public void verifyTermAndConditionPage()
+	{
+		TermAndConditionPage tc=new TermAndConditionPage();
+		verifyURLContains(tc.termPageURL);
+		verifyContainText(tc.heading,tc.headingValue);
+		verifyContainText(tc.p1,tc.p1Value);
+		verifyContainText(tc.p2,tc.p2Value);
+		verifyContainText(tc.p3,tc.p3Value);
+		verifyContainText(tc.p4,tc.p4Value);
+		verifyContainText(tc.p5,tc.p5Value);
+
+	}
+	
+	public void verifyPrivacyPolicyPage()
+	{
+		PrivacyPolicyPage tc=new PrivacyPolicyPage();
+		verifyURLContains(tc.privacyPageURL);
+		verifyContainText(tc.heading,tc.headingValue);
+		verifyContainText(tc.p1,tc.p1Value);
+		verifyContainText(tc.p2,tc.p2Value);
+		verifyContainText(tc.p3,tc.p3Value);
+		verifyContainText(tc.p4,tc.p4Value);
+		verifyContainText(tc.p5,tc.p5Value);
+
+	}
+	
+	public void verifyContactUsPage()
+	{
+		ContactUsPage tc=new ContactUsPage();
+		verifyURLContains(tc.contactPageURL);
+		verifyContainText(tc.heading,tc.headingValue);
+
+
+	}
+	
+	public void verifyURLContains(String text)
+	{
+		String cURL=driver.getCurrentUrl();
+		if(!cURL.contains(text))
+		{	
+			Reporter.log("<Font Color=\"RED\">verification of URL : \""+cURL +"\"  should have "+ text +" value failed </Font>");
+			softAssert.assertEquals(true, false);
+			System.err.println("verification of URL : \""+cURL +"\" should have "+ text +" value failed " );
+		}
+	}
 }

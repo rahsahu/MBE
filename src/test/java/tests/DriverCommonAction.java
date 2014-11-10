@@ -4,11 +4,13 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 
 import Wrapper.DriverWrapper;
 import Wrapper.UtilWrapper;
@@ -45,7 +47,7 @@ public class DriverCommonAction {
 	
 	@BeforeMethod(groups={"loadDriver"},alwaysRun=true)
 	public void LoadDriverBeforeTest() {
-		System.out.println("Before Metnod is getting called");
+//		System.out.println("Before Metnod is getting called");
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setBrowserName("firefox");
 		capabilities.setPlatform(Platform.WINDOWS);
@@ -108,13 +110,46 @@ public class DriverCommonAction {
 	}
 	@AfterMethod(alwaysRun=true)
 	public void closeBrowser() {
-		driver.quit();
+//		if(driver!=null)
+			 driver.close();
 	}
 	
 	@AfterTest(alwaysRun=true)
 	public void teardown() {
 		System.out.println("After Test is getting called");
+		DriverWrapper.softAssert.assertAll();
 		if(driver!=null)
 		 driver.quit();
 	}
+	
+	@DataProvider(name = "PIDEMPTY")
+	public static  Object[][] createData(ITestContext context) {
+		final String dir = System.getProperty("user.dir");
+		
+		System.out.println("current dir = " + dir);
+		String Environment = context.getCurrentXmlTest().getParameter("Environment");
+		if(Environment.equalsIgnoreCase("stage"))
+		return UtilWrapper.getTableArray(dir
+				+ "/src/test/resources/testdata/LINKS.xls", "nlg", "StagePid");
+		else
+			return UtilWrapper.getTableArray(dir
+					+ "/src/test/resources/testdata/LINKS.xls", "nlg", "EnvPid");
+
+	}
+	
+	@DataProvider(name = "prosportsEmpty")
+	public static  Object[][] createDataprosportsEmpty(ITestContext context) {
+		final String dir = System.getProperty("user.dir");
+		
+		System.out.println("current dir = " + dir);
+		String Environment = context.getCurrentXmlTest().getParameter("Environment");
+		if(Environment.equalsIgnoreCase("stage"))
+		return UtilWrapper.getTableArray(dir
+				+ "/src/test/resources/testdata/LINKS.xls", "prosports", "StagePid");
+		else
+			return UtilWrapper.getTableArray(dir
+					+ "/src/test/resources/testdata/LINKS.xls", "prosports", "EnvPid");
+
+	}
+	
 }

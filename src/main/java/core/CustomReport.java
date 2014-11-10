@@ -472,7 +472,7 @@ public class CustomReport implements IReporter {
         writer.print(Utils.escapeHtml(iterator.next()));
         while (iterator.hasNext()) {
             writer.print("<br/>");
-            writer.print(Utils.escapeHtml(iterator.next()));
+            writer.print(iterator.next());
         }
         writer.print("</div>");
     }
