@@ -20,7 +20,7 @@ import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 
 import Wrapper.DriverWrapper;
 import Wrapper.MyAccountPage;
-import Wrapper.ProSportsPage;
+import Wrapper.prosports.ProSportsPage;
 
 public class ProSportsTest extends DriverCommonAction {
 

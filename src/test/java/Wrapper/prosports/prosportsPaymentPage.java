@@ -1,4 +1,6 @@
-package Wrapper;
+package Wrapper.prosports;
+
+import Wrapper.BasePaymentPage;
 
 public class prosportsPaymentPage extends BasePaymentPage{
 	public String windowHandel=null;

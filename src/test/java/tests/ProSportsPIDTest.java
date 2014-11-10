@@ -5,10 +5,10 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import Wrapper.DriverWrapper;
-import Wrapper.ProSportsContactUsPage;
-import Wrapper.ProSportsPrivacyPolicyPage;
-import Wrapper.ProSportsTermAndConditionPage;
-import Wrapper.prosportsPaymentPage;
+import Wrapper.prosports.ProSportsContactUsPage;
+import Wrapper.prosports.ProSportsPrivacyPolicyPage;
+import Wrapper.prosports.ProSportsTermAndConditionPage;
+import Wrapper.prosports.prosportsPaymentPage;
 
 public class ProSportsPIDTest extends DriverCommonAction {
 

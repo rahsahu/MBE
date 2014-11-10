@@ -1,4 +1,4 @@
-package Wrapper;
+package Wrapper.prosports;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
