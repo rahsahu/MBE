@@ -182,4 +182,21 @@ public class DriverCommonAction {
 					+ "/src/test/resources/testdata/LINKS.xls", "TelstraOnDesk", "EnvPid");
 
 	}
+	
+	
+	
+	@DataProvider(name = "mHubEmpty")
+	public static  Object[][] createDatamHubEmpty(ITestContext context) {
+		final String dir = System.getProperty("user.dir");
+		
+		System.out.println("current dir = " + dir);
+		String Environment = context.getCurrentXmlTest().getParameter("Environment");
+		if(Environment.equalsIgnoreCase("stage"))
+		return UtilWrapper.getTableArray(dir
+				+ "/src/test/resources/testdata/LINKS.xls", "mHub", "StagePid");
+		else
+			return UtilWrapper.getTableArray(dir
+					+ "/src/test/resources/testdata/LINKS.xls", "mHub", "EnvPid");
+
+	}
 }

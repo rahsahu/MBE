@@ -65,6 +65,7 @@ public class MHubPage {
 
 
 	public static String footer1Text="My Account";
+	public static String footer1TextWithoutLogin="Login";
 	public static String footer2Text="Terms";
 	public static String footer3Text="Privacy";
 	public static String footer4Text="Help";

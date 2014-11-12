@@ -10,7 +10,12 @@ public class MyReporter {
 	}
 	
 	public  static void VerifyingPresent(String by){
-		Reporter.log("<font color='blue'> Validating Element : </font><font color='black'><b>"+by+"</b>  Is Present or Not </font>");	
+		Reporter.log("<font color='blue'> Verifying Element : <b>"+by+"</b>  Is present or not </Font>");
+	}
+	
+	public  static void log(String by)
+	{
+		Reporter.log("<font color='blue'>"+by+" </Font>");
 	}
 	
 }
