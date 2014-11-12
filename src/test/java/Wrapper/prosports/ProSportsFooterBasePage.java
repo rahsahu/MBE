@@ -2,7 +2,7 @@ package Wrapper.prosports;
 
 import org.openqa.selenium.By;
 
-public class ProSportsBasePage {
+public class ProSportsFooterBasePage {
 
 	
 	public By footerLink1=By.xpath("//div[@id='footer']/ul/li[1]");

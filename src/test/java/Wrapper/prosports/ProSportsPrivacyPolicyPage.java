@@ -2,7 +2,7 @@ package Wrapper.prosports;
 
 import org.openqa.selenium.By;
 
-public class ProSportsPrivacyPolicyPage extends ProSportsBasePage{
+public class ProSportsPrivacyPolicyPage extends ProSportsFooterBasePage{
 
 	public By heading=By.xpath("//h1");
 	public By p1=By.xpath("//b");

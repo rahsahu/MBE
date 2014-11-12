@@ -1,4 +1,4 @@
-package Wrapper;
+package Wrapper.joocey;
 
 import Wrapper.BasePaymentPage;
 

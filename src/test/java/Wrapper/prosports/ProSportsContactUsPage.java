@@ -2,7 +2,7 @@ package Wrapper.prosports;
 
 import org.openqa.selenium.By;
 
-public class ProSportsContactUsPage extends ProSportsBasePage{
+public class ProSportsContactUsPage extends ProSportsFooterBasePage{
 
 	public By heading=By.xpath("//span");
 	public String headingValue = "Contact Us";
