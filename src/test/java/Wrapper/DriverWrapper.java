@@ -2,6 +2,10 @@ package Wrapper;
 
 import java.util.Iterator;
 
+import Wrapper.nlg.ContactUsPage;
+import Wrapper.nlg.PrivacyPolicyPage;
+import Wrapper.nlg.TermAndConditionPage;
+
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import com.google.common.base.Function;
 

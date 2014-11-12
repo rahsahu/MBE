@@ -3,8 +3,9 @@ package tests;
 
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
 import Wrapper.DriverWrapper;
-import Wrapper.NLGPaymentPage;
+import Wrapper.nlg.NLGPaymentPage;
 
 public class PIDTest extends DriverCommonAction {
 

@@ -1,4 +1,4 @@
-package Wrapper;
+package Wrapper.ingame;
 
 import org.openqa.selenium.By;
 

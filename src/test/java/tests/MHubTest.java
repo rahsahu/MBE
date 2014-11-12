@@ -5,7 +5,7 @@ import org.testng.asserts.SoftAssert;
 
 import Wrapper.AppyClubPage;
 import Wrapper.DriverWrapper;
-import Wrapper.MHubPage;
+import Wrapper.mhub.MHubPage;
 
 
 public class MHubTest extends DriverCommonAction {

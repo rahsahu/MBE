@@ -1,4 +1,4 @@
-package Wrapper;
+package Wrapper.nlg;
 
 import org.openqa.selenium.By;
 

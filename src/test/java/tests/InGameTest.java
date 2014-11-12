@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import Wrapper.DriverWrapper;
-import Wrapper.InGamePage;
+import Wrapper.ingame.InGamePage;
 
 
 

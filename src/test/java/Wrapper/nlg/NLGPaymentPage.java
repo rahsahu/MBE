@@ -1,6 +1,8 @@
-package Wrapper;
+package Wrapper.nlg;
 
 import org.openqa.selenium.By;
+
+import Wrapper.BasePaymentPage;
 
 public class NLGPaymentPage extends BasePaymentPage{
 	public String windowHandel=null;

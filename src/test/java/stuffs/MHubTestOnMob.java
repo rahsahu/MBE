@@ -12,9 +12,9 @@ import org.testng.asserts.SoftAssert;
 
 import tests.DriverCommonAction;
 import Wrapper.DriverWrapper;
-import Wrapper.MHubPage;
 import Wrapper.MyCapibilities;
 import Wrapper.UtilWrapper;
+import Wrapper.mhub.MHubPage;
 
 
 public class MHubTestOnMob  {
