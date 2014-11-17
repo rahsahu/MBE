@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Default suite">
+	<parameter name="Environment" value="Stage"/>
+	
+ <listeners>
+<listener class-name="core.CustomReport" />
+</listeners>
+
+	<test verbose="2" name="testng.xml">
+
+	    <groups>
+			<run>
+				<include name="RUNLGEmpty" />
+			</run>
+		</groups>
+		<packages>
+		<package name="tests"></package>
+		</packages>
+
+	</test><!-- Default test -->
+</suite>

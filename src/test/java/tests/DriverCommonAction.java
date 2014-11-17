@@ -121,82 +121,109 @@ public class DriverCommonAction {
 		if(driver!=null)
 		 driver.quit();
 	}
-	
-	@DataProvider(name = "PIDEMPTY")
+
+	@DataProvider(name = "NLGEMPTY")
 	public static  Object[][] createData(ITestContext context) {
-		final String dir = System.getProperty("user.dir");
-		
-		System.out.println("current dir = " + dir);
-		String Environment = context.getCurrentXmlTest().getParameter("Environment");
-		if(Environment.equalsIgnoreCase("stage"))
-		return UtilWrapper.getTableArray(dir
-				+ "/src/test/resources/testdata/LINKS.xls", "nlg", "StagePid");
-		else
-			return UtilWrapper.getTableArray(dir
-					+ "/src/test/resources/testdata/LINKS.xls", "nlg", "EnvPid");
+		return getArray("NLG",context.getCurrentXmlTest().getParameter("Environment"));
+	}
 
+	@DataProvider(name = "HotMobileBabesEmpty")
+	public static  Object[][] createDataHotMobileBabesEmpty(ITestContext context) {
+		return getArray("HotMobileBabes",context.getCurrentXmlTest().getParameter("Environment"));
 	}
 	
-	@DataProvider(name = "prosportsEmpty")
+	@DataProvider(name = "ProSportsEmpty")
 	public static  Object[][] createDataprosportsEmpty(ITestContext context) {
-		final String dir = System.getProperty("user.dir");
-		
-		System.out.println("current dir = " + dir);
-		String Environment = context.getCurrentXmlTest().getParameter("Environment");
-		if(Environment.equalsIgnoreCase("stage"))
-		return UtilWrapper.getTableArray(dir
-				+ "/src/test/resources/testdata/LINKS.xls", "prosports", "StagePid");
-		else
-			return UtilWrapper.getTableArray(dir
-					+ "/src/test/resources/testdata/LINKS.xls", "prosports", "EnvPid");
-
+		return getArray("ProSports",context.getCurrentXmlTest().getParameter("Environment"));
 	}
-	
 	
 	@DataProvider(name = "JooceyEmpty")
 	public static  Object[][] createDataJooceyEmpty(ITestContext context) {
-		final String dir = System.getProperty("user.dir");
-		
-		System.out.println("current dir = " + dir);
-		String Environment = context.getCurrentXmlTest().getParameter("Environment");
-		if(Environment.equalsIgnoreCase("stage"))
-		return UtilWrapper.getTableArray(dir
-				+ "/src/test/resources/testdata/LINKS.xls", "Joocey", "StagePid");
-		else
-			return UtilWrapper.getTableArray(dir
-					+ "/src/test/resources/testdata/LINKS.xls", "Joocey", "EnvPid");
-
+		return getArray("Joocey",context.getCurrentXmlTest().getParameter("Environment"));
 	}
 	
 	@DataProvider(name = "TelstraOnDeskEmpty")
 	public static  Object[][] createDataTelstraOnDeskEmpty(ITestContext context) {
-		final String dir = System.getProperty("user.dir");
-		
-		System.out.println("current dir = " + dir);
-		String Environment = context.getCurrentXmlTest().getParameter("Environment");
-		if(Environment.equalsIgnoreCase("stage"))
-		return UtilWrapper.getTableArray(dir
-				+ "/src/test/resources/testdata/LINKS.xls", "TelstraOnDesk", "StagePid");
-		else
-			return UtilWrapper.getTableArray(dir
-					+ "/src/test/resources/testdata/LINKS.xls", "TelstraOnDesk", "EnvPid");
-
+		return getArray("TelstraOnDesk",context.getCurrentXmlTest().getParameter("Environment"));
 	}
-	
-	
 	
 	@DataProvider(name = "mHubEmpty")
 	public static  Object[][] createDatamHubEmpty(ITestContext context) {
-		final String dir = System.getProperty("user.dir");
-		
-		System.out.println("current dir = " + dir);
-		String Environment = context.getCurrentXmlTest().getParameter("Environment");
-		if(Environment.equalsIgnoreCase("stage"))
-		return UtilWrapper.getTableArray(dir
-				+ "/src/test/resources/testdata/LINKS.xls", "mHub", "StagePid");
-		else
-			return UtilWrapper.getTableArray(dir
-					+ "/src/test/resources/testdata/LINKS.xls", "mHub", "EnvPid");
-
+		return getArray("mHub",context.getCurrentXmlTest().getParameter("Environment"));
 	}
+	
+	@DataProvider(name = "FiiTREmpty")
+	public static  Object[][] createDataFiiTREmpty(ITestContext context) {
+		return getArray("FiiTR",context.getCurrentXmlTest().getParameter("Environment"));
+	}
+	
+	@DataProvider(name = "InGameEmpty")
+	public static  Object[][] createDataInGameEmpty(ITestContext context) {
+		return getArray("InGame",context.getCurrentXmlTest().getParameter("Environment"));
+	}
+	
+	@DataProvider(name = "mLoveEmpty")
+	public static  Object[][] createDatamLoveEmpty(ITestContext context) {
+		return getArray("mLove",context.getCurrentXmlTest().getParameter("Environment"));
+	}
+	@DataProvider(name = "mBrightEmpty")
+	public static  Object[][] createDatamBrightEmpty(ITestContext context) {
+		return getArray("mBright",context.getCurrentXmlTest().getParameter("Environment"));
+	}
+	@DataProvider(name = "mProovEmpty")
+	public static  Object[][] createDatamProovEmpty(ITestContext context) {
+		return getArray("mProov",context.getCurrentXmlTest().getParameter("Environment"));
+	}
+	@DataProvider(name = "GamesHausEmpty")
+	public static  Object[][] createDataGamesHausEmpty(ITestContext context) {
+		return getArray("GamesHaus",context.getCurrentXmlTest().getParameter("Environment"));
+	}
+
+	@DataProvider(name = "mBookClubEmpty")
+	public static  Object[][] createDatamBookClubEmpty(ITestContext context) {
+		return getArray("mBookClub",context.getCurrentXmlTest().getParameter("Environment"));
+	}
+
+	@DataProvider(name = "FreemiumEmpty")
+	public static  Object[][] createDataFreemiumEmpty(ITestContext context) {
+		return getArray("Freemium",context.getCurrentXmlTest().getParameter("Environment"));
+	}
+
+//	NLG
+//	HotMobileBabes
+//	ProSports
+//	Joocey
+//	TelstraOnDesk
+//	mHub
+//	FiiTR
+//	InGame
+//	mLove
+//	mBright
+//	mProov
+//	GamesHaus
+//	mBookClub
+//	Freemium 
+public static Object[][] getArray(String sheet,String Environment){
+	final String dir = System.getProperty("user.dir");
+	if(Environment.equalsIgnoreCase("stage"))
+		return UtilWrapper.getTableArray(dir + "/src/test/resources/testdata/LINKS.xls", sheet, "StagePid");
+	else
+		return UtilWrapper.getTableArray(dir + "/src/test/resources/testdata/LINKS.xls", sheet, "EnvPid");
+}
+	
+//	@DataProvider(name = "NLGGF")
+//	public static  Object[][] createDataNLGGF(ITestContext context) {
+//		final String dir = System.getProperty("user.dir");
+//		
+//		System.out.println("current dir = " + dir);
+//		String Environment = context.getCurrentXmlTest().getParameter("Environment");
+//		if(Environment.equalsIgnoreCase("stage"))
+//		return UtilWrapper.getTableArray(dir
+//				+ "/src/test/resources/testdata/LINKS.xls", "nlg", "Stagegf");
+//		else
+//			return UtilWrapper.getTableArray(dir
+//					+ "/src/test/resources/testdata/LINKS.xls", "nlg", "Envgf");
+//
+//	}
+
 }

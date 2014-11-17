@@ -76,14 +76,15 @@ public class mhubPIDTest extends DriverCommonAction {
 
 		DriverWrapper util=new DriverWrapper(driver);
 		util.waitForPageLoad();
-		String winHandleBefore=driver.getWindowHandle();
+		
+	//	String winHandleBefore=driver.getWindowHandle();
 		MHubPaymentPage np=new MHubPaymentPage();
 		
 		Reporter.log("\n<b>Verification of Term and condition page</b>");		
 		util.findElement(np.termLink).click();
 		
 
-		util.SwitchWindow();
+	//	util.SwitchWindow();
 		MHubTermAndConditionPage tc=new MHubTermAndConditionPage();
 		util.verifyURLContains(tc.termPageURL);
 		util.verifyContainText(tc.heading,tc.headingValue);
@@ -95,8 +96,9 @@ public class mhubPIDTest extends DriverCommonAction {
 
 
 
-		driver.close();
-		driver.switchTo().window(winHandleBefore);
+	//	driver.close();
+	//	driver.switchTo().window(winHandleBefore);
+		driver.navigate().back();
 		MyReporter.log(driver.getCurrentUrl());
 		Thread.sleep(2000);
 		MyReporter.log(driver.getCurrentUrl());
@@ -112,9 +114,9 @@ public class mhubPIDTest extends DriverCommonAction {
 		util.verifyContainText(cus.footerLink5,cus.footerLinkValue5);
 
 		
-		driver.close();
-		driver.switchTo().window(winHandleBefore);
-
+	//	driver.close();
+	//	driver.switchTo().window(winHandleBefore);
+		driver.navigate().back();
 		
 		util.findElement(np.privacyLink).click();
 		util.SwitchWindow();
@@ -134,8 +136,8 @@ public class mhubPIDTest extends DriverCommonAction {
 		util.verifyContainText(privacy.p5,privacy.p5Value);
 
 		
-		driver.close();
-		driver.switchTo().window(winHandleBefore);
+	//	driver.close();
+	//	driver.switchTo().window(winHandleBefore);
 	
 		
 

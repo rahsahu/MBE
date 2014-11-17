@@ -14,7 +14,7 @@ public class ProSportsPIDTest extends DriverCommonAction {
 
 	
 
-	@Test(dataProvider = "prosportsEmpty", groups = { "prosportsEmpty","paymentAll","prosportsMobile","all","AUPayment","prosportsPayment"})
+	@Test(dataProvider = "ProSportsEmpty", groups = { "ProSportsEmpty","paymentAll","prosportsMobile","all","AUPayment","prosportsPayment"})
 	public void paymentMobileTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
@@ -42,7 +42,7 @@ public class ProSportsPIDTest extends DriverCommonAction {
 	
 	}
 
-	@Test(dataProvider = "prosportsEmpty", groups = { "prosportsEmpty","paymentAll","prosportsPaypal","all","AUPayment" ,"prosportsPayment"})
+	@Test(dataProvider = "ProSportsEmpty", groups = { "ProSportsEmpty","paymentAll","prosportsPaypal","all","AUPayment" ,"prosportsPayment"})
 	public void paymentPaypalTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
@@ -64,7 +64,7 @@ public class ProSportsPIDTest extends DriverCommonAction {
 
 	
 	
-	@Test(dataProvider = "prosportsEmpty", groups = { "prosportsEmpty","paymentAll","prosportsLinks","all","AUPayment" ,"prosportsPayment"})
+	@Test(dataProvider = "ProSportsEmpty", groups = { "ProSportsEmpty","paymentAll","prosportsLinks","all","AUPayment" ,"prosportsPayment"})
 	public void paymentLinksTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";

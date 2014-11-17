@@ -15,12 +15,12 @@ public class MHubPrivacyPolicyPage extends MHubBasePage{
 	public By p8=By.xpath("//p[8]");
 	public By p9=By.xpath("//p[9]");
 
-	public String headingValue = "Privacy Policy";
+	public String headingValue = "About Us";
 	public String p1Value = "About Us";
-	public String p2Value = "Purpose of this Privacy Policy";
-	public String p3Value = "Consideration of personal information";
-	public String p4Value = "Collection of personal information";
-	public String p5Value = "Use/Disclosure of personal information";
+	public String p2Value = "This Policy governs your use of the MHUB mobile site and any content, products and services made available from or through this website.";
+	public String p3Value = "The mobile site and web site are made available by MHUB which is owned and operated";
+	public String p4Value = "Purpose of this Privacy Policy";
+	public String p5Value = "We are committed to protecting and maintaining the privacy of your personal information by adhering to all applicable and required privacy guidelines";
 	
 	public String privacyPageURL="privacy";
 
