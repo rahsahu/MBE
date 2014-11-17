@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import Wrapper.DriverWrapper;
 import Wrapper.nlg.NLGPaymentPage;
 
-public class PIDTest extends DriverCommonAction {
+public class NLGPIDTest extends DriverCommonAction {
 
 	
 

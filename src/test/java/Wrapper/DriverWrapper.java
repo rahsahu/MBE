@@ -122,11 +122,11 @@ public class DriverWrapper {
 	{
 		WebElement element=null;
 		try{
-			MyReporter.VerifyingPresent(by.toString(),"green");
+//			MyReporter.VerifyingPresent(by.toString(),"green");
 			element=getDriver().findElement(by);
 			
 					} catch (ElementNotFoundException e) {
-//						Reporter.log("<Font Color=\"RED\">Error : Element : "+by+" not found Present</Font>");
+						Reporter.log("<Font Color=\"RED\">Error : Element : "+by+" not found Present</Font>");
 						softAssert.assertEquals(true, false);
 				}	
 		return element;
@@ -150,7 +150,7 @@ public class DriverWrapper {
 		MyReporter.Verifying(Byelement.toString(),findElement(Byelement).getText() ,text);
 		if(!findElement(Byelement).getText().equalsIgnoreCase(text))
 		{	
-//			Reporter.log("<Font Color=\"RED\">verification of "+Byelement +"  should have "+ text +" value failed </Font>");
+			Reporter.log("<Font Color=\"RED\">verification of "+Byelement +"  should have "+ text +" value failed </Font>");
 			softAssert.assertEquals(true, false);
 			System.err.println("verification of "+Byelement +"  should have "+ text +" value failed " );
 		}
@@ -160,7 +160,7 @@ public class DriverWrapper {
 		MyReporter.Verifying(Byelement.toString(),findElement(Byelement).getText() ,text);
 		if(!findElement(Byelement).getText().contains(text))
 		{	
-//			Reporter.log("<Font Color=\"RED\">verification of "+Byelement +"  should have "+ text +" value failed</Font> ");
+			Reporter.log("<Font Color=\"RED\">verification of "+Byelement +"  should have "+ text +" value failed</Font> ");
 			softAssert.assertEquals(true, false);
 			System.err.println("verification of "+Byelement +"  should have "+ text +" value failed " );
 		}
@@ -216,7 +216,7 @@ public class DriverWrapper {
 		String cURL=driver.getCurrentUrl();
 		if(!cURL.contains(text))
 		{	
-//			Reporter.log("<Font Color=\"RED\">verification of URL : \""+cURL +"\"  should have "+ text +" value failed </Font>");
+			Reporter.log("<Font Color=\"RED\">verification of URL : \""+cURL +"\"  should have "+ text +" value failed </Font>");
 			softAssert.assertEquals(true, false);
 			System.err.println("verification of URL : \""+cURL +"\" should have "+ text +" value failed " );
 		}

@@ -1,7 +1,6 @@
 package tests;
 
 import org.openqa.selenium.By;
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import Wrapper.DriverWrapper;
@@ -27,11 +26,11 @@ public class ErrocodeTest extends DriverCommonAction  {
 		util.verifyContainText(new By.ByXPath(GlobalSetup.errorCodeXPATH.get(eCode)), GlobalSetup.errorMsg.get(eCode));
 		if(!eCode.contains("15") || eCode.contains("16")){
 			MyReporter.log("for error code "+eCode+" it wont check term contact us and privacy link in footer","red");
-		util.findElement(gp.termLink);
-		util.findElement(gp.contactUsLink);
-		util.findElement(gp.privacyLink);
+		util.elementPresent(gp.termLink);
+		util.elementPresent(gp.contactUsLink);
+		util.elementPresent(gp.privacyLink);
 		}
-		util.findElement(gp.homeLink);
+		util.elementPresent(gp.homeLink);
 		
 //		Reporter.log("\nverification of Term and condition page");		
 //		util.findElement(gp.termLink).click();
@@ -72,40 +71,40 @@ public class ErrocodeTest extends DriverCommonAction  {
 	}
 	
 	@Test(dataProvider = "NLGEMPTY", groups = { "NLGETest","AUAllETest","all"})
-	public void GatewayFailedTestNLG(String url,String pid,String amount){
+	public void ErrocodeTestNLG(String url,String pid,String amount){
 		callCommonTest(url,pid);
 	}
 
 	@Test(dataProvider = "ProSportsEmpty", groups = { "prosportsETest","AUAllETest","all"})
-	public void GatewayFailedTestprosports(String url,String pid,String amount){
+	public void ErrocodeTestprosports(String url,String pid,String amount){
 		
 		callCommonTest(url,pid);
 		
 	}
 
 	@Test(dataProvider = "JooceyEmpty", groups = { "JooceyETest","AUAllETest","all"})
-	public void GatewayFailedTestJoocey(String url,String pid,String amount){
+	public void ErrocodeTestJoocey(String url,String pid,String amount){
 		
 		callCommonTest(url,pid);
 		
 	}
 
 	@Test(dataProvider = "TelstraOnDeskEmpty", groups = { "TelstraOnDeskETest","AUAllETest","all"})
-	public void GatewayFailedTestTelstraOnDesk(String url,String pid,String amount){
+	public void ErrocodeTestTelstraOnDesk(String url,String pid,String amount){
 		
 		callCommonTest(url,pid);
 		
 	}
 
 	@Test(dataProvider = "mHubEmpty", groups = { "mHubETest","AUAllETest","all"})
-	public void GatewayFailedTestmHubEmpty(String url,String pid,String amount){
+	public void ErrocodeTestmHubEmpty(String url,String pid,String amount){
 		
 		callCommonTest(url,pid);
 		
 	}
 
 	@Test(dataProvider = "FiiTREmpty", groups = { "FiiTRETest","AUAllETest","all"})
-	public void GatewayFailedFiiTR(String url,String pid,String amount){
+	public void ErrocodeTestFiiTR(String url,String pid,String amount){
 		
 		callCommonTest(url,pid);
 		
@@ -114,49 +113,49 @@ public class ErrocodeTest extends DriverCommonAction  {
 	
 
 	@Test(dataProvider = "InGameEmpty", groups = { "InGameETest","AUAllETest","all"})
-	public void GatewayFailedInGame(String url,String pid,String amount){
+	public void ErrocodeTestInGame(String url,String pid,String amount){
 		
 		callCommonTest(url,pid);
 		
 	}
 
 	@Test(dataProvider = "mLoveEmpty", groups = { "mLoveETest","AUAllETest","all"})
-	public void GatewayFailedmLove(String url,String pid,String amount){
+	public void ErrocodeTestmLove(String url,String pid,String amount){
 		
 		callCommonTest(url,pid);
 		
 	}
 
 	@Test(dataProvider = "mBrightEmpty", groups = { "mBrightETest","AUAllETest","all"})
-	public void GatewayFailedmBright(String url,String pid,String amount){
+	public void ErrocodeTestmBright(String url,String pid,String amount){
 		
 		callCommonTest(url,pid);
 		
 	}
 
 	@Test(dataProvider = "mProovEmpty", groups = { "mProovETest","AUAllETest","all"})
-	public void GatewayFailedmProov(String url,String pid,String amount){
+	public void ErrocodeTestmProov(String url,String pid,String amount){
 		
 		callCommonTest(url,pid);
 		
 	}
 	
 	@Test(dataProvider = "GamesHausEmpty", groups = { "mProovETest","AUAllETest","all"})
-	public void GatewayFailedGamesHaus(String url,String pid,String amount){
+	public void ErrocodeTestGamesHaus(String url,String pid,String amount){
 		
 		callCommonTest(url,pid);
 		
 	}
 
 	@Test(dataProvider = "mBookClubEmpty", groups = { "mProovETest","AUAllETest","all"})
-	public void GatewayFailedmBookClub(String url,String pid,String amount){
+	public void ErrocodeTestmBookClub(String url,String pid,String amount){
 		
 		callCommonTest(url,pid);
 		
 	}
 	
 	@Test(dataProvider = "FreemiumEmpty", groups = { "FreemiumETest","AUAllETest","all"})
-	public void GatewayFailedFreemium(String url,String pid,String amount){
+	public void ErrocodeTestFreemium(String url,String pid,String amount){
 		
 		callCommonTest(url,pid);
 		
