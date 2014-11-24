@@ -1,9 +1,10 @@
-package tests;
+package tests.beforesubscription;
 
 
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
+import core.driver.DriverCommonAction;
 import Wrapper.DriverWrapper;
 import Wrapper.nlg.NLGPaymentPage;
 

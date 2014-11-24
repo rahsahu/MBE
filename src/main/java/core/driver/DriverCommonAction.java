@@ -1,4 +1,4 @@
-package tests;
+package core.driver;
 
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;

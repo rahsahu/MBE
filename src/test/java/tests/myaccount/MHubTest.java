@@ -1,8 +1,9 @@
-package tests;
+package tests.myaccount;
 
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import core.driver.DriverCommonAction;
 import Wrapper.AppyClubPage;
 import Wrapper.DriverWrapper;
 import Wrapper.mhub.MHubPage;

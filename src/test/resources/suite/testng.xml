@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Default suite">
-	<parameter name="Environment" value="environment"/>
+	<parameter name="Environment" value="Environment"/>
  <listeners>
 <listener class-name="core.CustomReport" />
 </listeners>
@@ -11,7 +11,7 @@
 
 	    <groups>
 			<run>
-				<include name="mHubPayment" />
+				<include name="GamesHausPayment" />
 			</run>
 		</groups>
 		<packages>

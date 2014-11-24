@@ -10,7 +10,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import tests.DriverCommonAction;
+import core.driver.DriverCommonAction;
 import Wrapper.DriverWrapper;
 import Wrapper.MyCapibilities;
 import Wrapper.UtilWrapper;

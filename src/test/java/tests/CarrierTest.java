@@ -1,22 +1,9 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.gargoylesoftware.htmlunit.ElementNotFoundException;
-
+import core.driver.DriverCommonAction;
 import Wrapper.DriverWrapper;
 
 public class CarrierTest extends DriverCommonAction {

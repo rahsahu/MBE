@@ -1,4 +1,4 @@
-package tests;
+package tests.myaccount;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 
+import core.driver.DriverCommonAction;
 import Wrapper.DriverWrapper;
 import Wrapper.MyAccountPage;
 

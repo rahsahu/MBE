@@ -1,8 +1,8 @@
 package tests;
 
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 
+import core.driver.DriverCommonAction;
 import Wrapper.DriverWrapper;
 import Wrapper.nlg.NLGGatewayFailedPage;
 
