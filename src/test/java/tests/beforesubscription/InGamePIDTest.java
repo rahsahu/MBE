@@ -6,16 +6,16 @@ import org.testng.annotations.Test;
 
 import Wrapper.DriverCommonAction;
 import Wrapper.DriverWrapper;
-import Wrapper.gameshaus.GamesHausContactUsPage;
-import Wrapper.gameshaus.GamesHausPaymentPage;
-import Wrapper.gameshaus.GamesHausPrivacyPolicyPage;
-import Wrapper.gameshaus.GamesHausTermAndConditionPage;
+import Wrapper.ingame.InGameContactUsPage;
+import Wrapper.ingame.InGamePrivacyPolicyPage;
+import Wrapper.ingame.InGameTermAndConditionPage;
+import Wrapper.ingame.InGamePaymentPage;
 
-public class GamesHausPIDTest extends DriverCommonAction {
+public class InGamePIDTest extends DriverCommonAction {
 
 	
 
-	@Test(dataProvider = "GamesHausEmpty", groups = { "GamesHausEmpty","paymentAll","GamesHausMobile","all","AUPayment","GamesHausPayment"})
+	@Test(dataProvider = "InGameEmpty", groups = { "InGameEmpty","paymentAll","InGameMobile","all","AUPayment","InGamePayment"})
 	public void paymentMobileTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
@@ -26,7 +26,7 @@ public class GamesHausPIDTest extends DriverCommonAction {
 
 		DriverWrapper util=new DriverWrapper(driver);
 		util.waitForPageLoad();
-		GamesHausPaymentPage np=new GamesHausPaymentPage();
+		InGamePaymentPage np=new InGamePaymentPage();
 
 		Reporter.log("\nVerification of footer links"); 
 		util.elementPresent(np.CancelLink);
@@ -38,11 +38,34 @@ public class GamesHausPIDTest extends DriverCommonAction {
 		util.verifyContainText(np.mobileFormP1, np.mobileFormP1Value);
 		util.elementPresent(np.mobileSubmitButton);
 		util.verifyContainText(np.mobileFormP2, np.mobileFormP2Value);
-			
+		util.elementPresent(np.firstTab);
+
+	
 	}
 
+	@Test(dataProvider = "InGameEmpty", groups = { "InGameEmpty","paymentAll","InGamePaypal","all","AUPayment" ,"InGamePayment"})
+	public void paymentPaypalTabTest(String url,String pid,String amount) throws Exception {
+	
+		String aURL = url + "/?pid="+pid+"&territory=AU";
 		
-	@Test(dataProvider = "GamesHausEmpty", groups = { "GamesHausEmpty","paymentAll","GamesHausLinks","all","AUPayment" ,"GamesHausPayment"})
+		driver.manage().deleteAllCookies();
+		driver.get(aURL);
+		driver.manage().window().maximize();
+		//Thread.sleep(9000);
+		DriverWrapper util=new DriverWrapper(driver);
+		util.waitForPageLoad();
+
+		InGamePaymentPage np=new InGamePaymentPage();
+
+		util.findElement(np.secondTab).click();
+		util.elementPresent(np.PaypalSubmitButton);
+
+	
+	}
+
+	
+	
+	@Test(dataProvider = "InGameEmpty", groups = { "InGameEmpty","paymentAll","InGameLinks","all","AUPayment" ,"InGamePayment"})
 	public void paymentLinksTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
@@ -54,16 +77,20 @@ public class GamesHausPIDTest extends DriverCommonAction {
 		DriverWrapper util=new DriverWrapper(driver);
 		util.waitForPageLoad();
 
-		GamesHausPaymentPage np=new GamesHausPaymentPage();
+		InGamePaymentPage np=new InGamePaymentPage();
 		
 		Reporter.log("\n<b>Verification of Term and condition page</b>");		
 		util.findElement(np.termLink).click();
 		String winHandleBefore=driver.getWindowHandle();
 
 		util.SwitchWindow();
-		GamesHausTermAndConditionPage tc=new GamesHausTermAndConditionPage();
+		InGameTermAndConditionPage tc=new InGameTermAndConditionPage();
 		util.verifyURLContains(tc.termPageURL);
 		util.verifyContainText(tc.heading,tc.headingValue);
+		util.verifyContainText(tc.p1,tc.p1Value);
+		util.verifyContainText(tc.p2,tc.p2Value);
+
+
 
 		driver.close();
 		driver.switchTo().window(winHandleBefore);
@@ -71,7 +98,7 @@ public class GamesHausPIDTest extends DriverCommonAction {
 		Reporter.log("<b>\nVerification of Contact US page</b>");
 		util.findElement(np.contactUsLink).click();
 		util.SwitchWindow();
-		GamesHausContactUsPage cus=new GamesHausContactUsPage();
+		InGameContactUsPage cus=new InGameContactUsPage();
 		util.verifyURLContains(cus.contactPageURL);
 		util.verifyContainText(cus.heading,cus.headingValue);
 		
@@ -82,7 +109,7 @@ public class GamesHausPIDTest extends DriverCommonAction {
 		util.findElement(np.privacyLink).click();
 		util.SwitchWindow();
 		Reporter.log("\nverification of Privacy Policy page");
-		GamesHausPrivacyPolicyPage privacy=new GamesHausPrivacyPolicyPage();
+		InGamePrivacyPolicyPage privacy=new InGamePrivacyPolicyPage();
 		util.verifyURLContains(privacy.privacyPageURL);
 		util.verifyContainText(privacy.heading,privacy.headingValue);
 		util.verifyContainText(privacy.p1,privacy.p1Value);

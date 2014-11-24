@@ -3,7 +3,7 @@ package tests;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import core.driver.DriverCommonAction;
+import Wrapper.DriverCommonAction;
 import Wrapper.DriverWrapper;
 
 public class CarrierTest extends DriverCommonAction {

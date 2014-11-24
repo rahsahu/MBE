@@ -17,6 +17,12 @@ public class NLGPaymentPage extends BasePaymentPage{
 	public String googleWalletHeadingValue="Subscribe for only $19.99/30 days";
 			
 	
+	
+	public String RUmobileFormP1Value="SВведите Ваш мобильный номер для подписки и начинайте играть в ЛУЧШИЕ браузерные игры прямо сейчас!";
+	public String RUmobileFormP2Value="Подпишитесь на Игры Без Границ и Вы получите неограниченный доступ к нашим ОТЛИЧНЫМ браузерным играм всего за 12 руб.";		
+	public String RUmobileBeforeMNumTextFieldValue="Введите Ваш мобильный номер";
+
+	
 	public By googleWalletSubmitButton=By.xpath("//div[@id='tab_google_wallet']");
 	public By googleWalletHeading=By.xpath("//div[@id='tab_google_wallet']/h3");
 	//form[@id='subscribe']/p[2]

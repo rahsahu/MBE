@@ -11,11 +11,11 @@
 
 	    <groups>
 			<run>
-				<include name="GamesHausPayment" />
+				<include name="RUNLGEmpty" />
 			</run>
 		</groups>
 		<packages>
-		<package name="tests"></package>
+		<package name="tests.beforesubscription"></package>
 		</packages>
 
 	</test><!-- Default test -->

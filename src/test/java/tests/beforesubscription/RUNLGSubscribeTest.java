@@ -4,7 +4,7 @@ package tests.beforesubscription;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import core.driver.DriverCommonAction;
+import Wrapper.DriverCommonAction;
 import Wrapper.DriverWrapper;
 import Wrapper.nlg.NLGPaymentPage;
 
@@ -40,53 +40,8 @@ public class RUNLGSubscribeTest extends DriverCommonAction {
 
 	
 	}
-
-	@Test(dataProvider = "NLGEMPTY", groups = { "NLGEmpty","paymentAll","NLGPaypal","all","RUPayment" })
-	public void paymentPaypalTabTest(String url,String pid,String amount) throws Exception {
 	
-		String aURL = url + "/?pid="+pid+"&territory=RU";
-		
-		driver.manage().deleteAllCookies();
-		driver.get(aURL);
-		driver.manage().window().maximize();
-		//Thread.sleep(9000);
-		DriverWrapper util=new DriverWrapper(driver);
-		util.waitForPageLoad();
-
-		NLGPaymentPage np=new NLGPaymentPage();
-
-		util.findElement(np.secondTab).click();
-		util.verifyContainText(np.PaypalFormHeading, np.PaypalFormHeadingValue);
-		util.elementPresent(np.PaypalSubmitButton);
-
-	
-	}
-
-	
-	@Test(dataProvider = "NLGEMPTY", groups = { "NLGEmpty","paymentAll","NLGGoogleWallet","all","RUPayment" })
-	public void paymentGoogleWalletTabTest(String url,String pid,String amount) throws Exception {
-	
-		String aURL = url + "/?pid="+pid+"&territory=RU";
-		
-		driver.manage().deleteAllCookies();
-		driver.get(aURL);
-		driver.manage().window().maximize();
-
-		DriverWrapper util=new DriverWrapper(driver);
-		util.waitForPageLoad();
-		System.out.println("Opening URL : "+aURL);
-		System.out.println("URL :"+driver.getCurrentUrl());
-		NLGPaymentPage np=new NLGPaymentPage();
-
-		util.findElement(np.thirdTab).click();
-		
-		util.verifyContainText(np.googleWalletHeading, np.googleWalletHeadingValue);	
-		util.elementPresent(np.googleWalletSubmitButton);
-
-	
-	}
-	
-	@Test(dataProvider = "NLGEMPTY", groups = { "NLGEmpty","paymentAll","NLGLinks","all","RUPayment" })
+	@Test(dataProvider = "NLGEMPTY", groups = { "RUNLGEmpty","paymentAll","NLGLinks","all","RUPayment" })
 	public void paymentLinksTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=RU";

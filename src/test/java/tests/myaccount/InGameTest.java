@@ -3,7 +3,7 @@ package tests.myaccount;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import core.driver.DriverCommonAction;
+import Wrapper.DriverCommonAction;
 import Wrapper.DriverWrapper;
 import Wrapper.ingame.InGamePage;
 

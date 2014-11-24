@@ -36,6 +36,9 @@ public class BasePaymentPage {
 	public By RUmobileFormP1=By.xpath("//p[1]");
 	public By RUmobileFormP2=By.xpath("//p[2]");
 
+	public String RUtermLinkValue="Условия";
+	public String RUprivacyLinkValue="Конфиденциальность";
+	public String RUcontactUsLinkValue="Связаться с нами";
 
 	
 }

@@ -3,7 +3,7 @@ package tests;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-import core.driver.DriverCommonAction;
+import Wrapper.DriverCommonAction;
 import Wrapper.DriverWrapper;
 import Wrapper.GlobalSetup;
 import Wrapper.MyReporter;

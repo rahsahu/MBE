@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 
-import core.driver.DriverCommonAction;
+import Wrapper.DriverCommonAction;
 import Wrapper.DriverWrapper;
 import Wrapper.MyAccountPage;
 
