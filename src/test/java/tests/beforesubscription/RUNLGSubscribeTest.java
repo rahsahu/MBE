@@ -6,7 +6,10 @@ import org.testng.annotations.Test;
 
 import Wrapper.DriverCommonAction;
 import Wrapper.DriverWrapper;
-import Wrapper.nlg.NLGPaymentPage;
+import Wrapper.nlg.RUNLGContactUsPage;
+import Wrapper.nlg.RUNLGPaymentPage;
+import Wrapper.nlg.RUNLGPrivacyPolicyPage;
+import Wrapper.nlg.RUTermAndConditionPage;
 
 public class RUNLGSubscribeTest extends DriverCommonAction {
 
@@ -24,24 +27,27 @@ public class RUNLGSubscribeTest extends DriverCommonAction {
 
 		DriverWrapper util=new DriverWrapper(driver);
 		util.waitForPageLoad();
-		NLGPaymentPage np=new NLGPaymentPage();
+		RUNLGPaymentPage np=new RUNLGPaymentPage();
 
 		Reporter.log("\nVerification of footer links"); 
-//		util.elementPresent(np.RUCancelLink);
-		util.elementPresent(np.RUtermLink);
-		util.elementPresent(np.RUprivacyLink);
-		util.elementPresent(np.RUcontactUsLink);
-		util.verifyContainText(np.RUmobileNumberTextBox, np.mobileNumberTextBoxValue);
-		util.verifyContainText(np.RUmobileBeforeMNumTextField, np.mobileBeforeMNumTextFieldValue);
-		util.verifyContainText(np.RUmobileFormP1, np.mobileFormP1Value);
-		util.elementPresent(np.RUmobileSubmitButton);
-		util.verifyContainText(np.RUmobileFormP2, np.mobileFormP2Value);
-//		util.elementPresent(np.RUfirstTab);
+//		util.elementPresent(np.CancelLink);
+		util.elementPresent(np.termLink);
+		util.elementPresent(np.privacyLink);
+		util.elementPresent(np.contactUsLink);
+		util.verifyContainText(np.mobileNumberTextBox, np.mobileNumberTextBoxValue);
+		util.verifyContainText(np.mobileBeforeMNumTextField, np.mobileBeforeMNumTextFieldValue);
+		util.verifyContainText(np.mobileFormP1, np.mobileFormP1Value);
+		util.elementPresent(np.mobileSubmitButton);
+		util.verifyContainText(np.mobileFormP2, np.mobileFormP2Value);
+		util.verifyContainText(np.termLink, np.termLinkValue);
+		util.verifyContainText(np.contactUsLink, np.contactUsLinkValue);
+		util.verifyContainText(np.privacyLink, np.privacyLinkValue);
+//		util.elementPresent(np.firstTab);
 
 	
 	}
 	
-	@Test(dataProvider = "NLGEMPTY", groups = { "RUNLGEmpty","paymentAll","NLGLinks","all","RUPayment" })
+	@Test(dataProvider = "NLGEMPTY", groups = { "RUNLGEmpty","RUpaymentAll","RUNLGLinks","all","RUPayment" })
 	public void paymentLinksTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=RU";
@@ -53,34 +59,50 @@ public class RUNLGSubscribeTest extends DriverCommonAction {
 		DriverWrapper util=new DriverWrapper(driver);
 		util.waitForPageLoad();
 
-		NLGPaymentPage np=new NLGPaymentPage();
+		RUNLGPaymentPage np=new RUNLGPaymentPage();
 		
 		Reporter.log("\nverification of Term and condition page");		
 		util.findElement(np.termLink).click();
-//		String winHandleBefore=driver.getWindowHandle();
+		String winHandleBefore=driver.getWindowHandle();
 
-//		util.SwitchWindow();
-		util.verifyTermAndConditionPage();
+		util.SwitchWindow();
+		RUTermAndConditionPage tc=new RUTermAndConditionPage();
+		util.verifyURLContains(tc.termPageURL);
+		util.verifyContainText(tc.heading,tc.headingValue);
+		util.verifyContainText(tc.p1,tc.p1Value);
+		util.verifyContainText(tc.p2,tc.p2Value);
+		util.verifyContainText(tc.p3,tc.p3Value);
+		util.verifyContainText(tc.p4,tc.p4Value);
 
-//		driver.close();
-//		driver.switchTo().window(winHandleBefore);
+
+		driver.close();
+		driver.switchTo().window(winHandleBefore);
 		driver.navigate().back();
 		Reporter.log("<b>\nverification of Contact US page</b>");
 		util.findElement(np.contactUsLink).click();
 		util.SwitchWindow();
-		util.verifyContactUsPage();
-//		driver.close();
-//		driver.switchTo().window(winHandleBefore);
+		
+		RUNLGContactUsPage cus=new RUNLGContactUsPage();
+		util.verifyURLContains(cus.contactPageURL);
+		util.verifyContainText(cus.heading,cus.headingValue);
+		
+		driver.close();
+		driver.switchTo().window(winHandleBefore);
 
-		driver.navigate().back();
+//		driver.navigate().back();
 		util.findElement(np.privacyLink).click();
 		util.SwitchWindow();
 		Reporter.log("\nverification of Privacy Policy page");
-		util.verifyPrivacyPolicyPage();
+		RUNLGPrivacyPolicyPage pp=new RUNLGPrivacyPolicyPage();
+		util.verifyURLContains(pp.privacyPageURL);
+		util.verifyContainText(pp.heading,pp.headingValue);
+		util.verifyContainText(pp.p1,pp.p1Value);
+		util.verifyContainText(pp.p2,pp.p2Value);
+		util.verifyContainText(pp.p3,pp.p3Value);
 
-		driver.navigate().back();
-//		driver.close();
-//		driver.switchTo().window(winHandleBefore);
+//		driver.navigate().back();
+		driver.close();
+		driver.switchTo().window(winHandleBefore);
 	
 		
 
