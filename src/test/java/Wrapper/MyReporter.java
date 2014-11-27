@@ -16,6 +16,7 @@ public class MyReporter {
 	public  static void log(String by)
 	{
 		Reporter.log("<Font color='blue'>"+by+"</Font>");
+		System.out.println(by);
 	}
 	
 	public  static void Verifying(String by,String expected,String actual,String color)

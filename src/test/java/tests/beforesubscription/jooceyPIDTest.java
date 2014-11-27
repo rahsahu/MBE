@@ -16,7 +16,7 @@ public class jooceyPIDTest extends DriverCommonAction {
 	
 
 	@Test(dataProvider = "JooceyEmpty", groups = { "JooceyEmpty","paymentAll","JooceyMobile","all","AUPayment","JooceyPayment"})
-	public void paymentMobileTabTest(String url,String pid,String amount) throws Exception {
+	public void jooceypaymentMobileTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		
@@ -44,7 +44,7 @@ public class jooceyPIDTest extends DriverCommonAction {
 	}
 
 	@Test(dataProvider = "JooceyEmpty", groups = { "JooceyEmpty","paymentAll","JooceyPaypal","all","AUPayment" ,"JooceyPayment"})
-	public void paymentPaypalTabTest(String url,String pid,String amount) throws Exception {
+	public void jooceypaymentPaypalTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		
@@ -66,7 +66,7 @@ public class jooceyPIDTest extends DriverCommonAction {
 	
 	
 	@Test(dataProvider = "JooceyEmpty", groups = { "JooceyEmpty","paymentAll","JooceyLinks","all","AUPayment" ,"JooceyPayment"})
-	public void paymentLinksTest(String url,String pid,String amount) throws Exception {
+	public void jooceypaymentLinksTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		Reporter.log("verification of Term and condition,  Contact US and  Privacy Policy page");	
@@ -85,6 +85,7 @@ public class jooceyPIDTest extends DriverCommonAction {
 
 		util.SwitchWindow();
 		JooceyTermAndConditionPage tc=new JooceyTermAndConditionPage();
+		util.waitForPageLoad();
 		util.verifyURLContains(tc.termPageURL);
 		util.verifyContainText(tc.heading,tc.headingValue);
 		util.verifyContainText(tc.menu1,tc.menuValue1);
@@ -101,6 +102,7 @@ public class jooceyPIDTest extends DriverCommonAction {
 		Reporter.log("<b>\nVerification of Contact US page</b>");
 		util.findElement(np.contactUsLink).click();
 		util.SwitchWindow();
+		util.waitForPageLoad();
 		JooceyContactUsPage cus=new JooceyContactUsPage();
 		util.verifyURLContains(cus.contactPageURL);
 		util.verifyContainText(cus.menu1,cus.menuValue1);
@@ -117,6 +119,7 @@ public class jooceyPIDTest extends DriverCommonAction {
 		util.findElement(np.privacyLink).click();
 		util.SwitchWindow();
 		Reporter.log("\nverification of Privacy Policy page");
+		util.waitForPageLoad();
 		JooceyPrivacyPolicyPage privacy=new JooceyPrivacyPolicyPage();
 		util.verifyURLContains(privacy.privacyPageURL);
 		util.verifyContainText(privacy.heading,privacy.headingValue);

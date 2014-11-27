@@ -17,7 +17,7 @@ public class mhubPIDTest extends DriverCommonAction {
 	
 
 	@Test(dataProvider = "mHubEmpty", groups = { "mHubEmpty","paymentAll","mHubMobile","all","AUPayment","mHubPayment"})
-	public void paymentMobileTabTest(String url,String pid,String amount) throws Exception {
+	public void MHUBpaymentMobileTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		
@@ -45,7 +45,7 @@ public class mhubPIDTest extends DriverCommonAction {
 	}
 
 	@Test(dataProvider = "mHubEmpty", groups = { "mHubEmpty","paymentAll","mHubPaypal","all","AUPayment" ,"mHubPayment"})
-	public void paymentPaypalTabTest(String url,String pid,String amount) throws Exception {
+	public void MHUBpaymentPaypalTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		
@@ -67,7 +67,7 @@ public class mhubPIDTest extends DriverCommonAction {
 	
 	
 	@Test(dataProvider = "mHubEmpty", groups = { "mHubEmpty","paymentAll","mHubLinks","all","AUPayment" ,"mHubPayment"})
-	public void paymentLinksTest(String url,String pid,String amount) throws Exception {
+	public void MHUBpaymentLinksTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		Reporter.log("verification of Term and condition,  Contact US and  Privacy Policy page");	

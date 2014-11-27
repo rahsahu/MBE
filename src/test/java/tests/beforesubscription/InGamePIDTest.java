@@ -16,7 +16,7 @@ public class InGamePIDTest extends DriverCommonAction {
 	
 
 	@Test(dataProvider = "InGameEmpty", groups = { "InGameEmpty","paymentAll","InGameMobile","all","AUPayment","InGamePayment"})
-	public void paymentMobileTabTest(String url,String pid,String amount) throws Exception {
+	public void InGamepaymentMobileTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		
@@ -44,7 +44,7 @@ public class InGamePIDTest extends DriverCommonAction {
 	}
 
 	@Test(dataProvider = "InGameEmpty", groups = { "InGameEmpty","paymentAll","InGamePaypal","all","AUPayment" ,"InGamePayment"})
-	public void paymentPaypalTabTest(String url,String pid,String amount) throws Exception {
+	public void InGamepaymentPaypalTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		
@@ -66,7 +66,7 @@ public class InGamePIDTest extends DriverCommonAction {
 	
 	
 	@Test(dataProvider = "InGameEmpty", groups = { "InGameEmpty","paymentAll","InGameLinks","all","AUPayment" ,"InGamePayment"})
-	public void paymentLinksTest(String url,String pid,String amount) throws Exception {
+	public void InGamepaymentLinksTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		Reporter.log("verification of Term and condition,  Contact US and  Privacy Policy page");	

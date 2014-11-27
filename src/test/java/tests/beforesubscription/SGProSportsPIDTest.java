@@ -17,7 +17,7 @@ public class SGProSportsPIDTest extends DriverCommonAction {
 	
 
 	@Test(dataProvider = "ProSportsEmpty", groups = { "SGProSportsEmpty","paymentAll","SGprosportsMobile","all","AUPayment","prosportsPayment"})
-	public void paymentMobileTabTest(String url,String pid,String amount) throws Exception {
+	public void SGProSportspaymentMobileTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=SG";
 		
@@ -44,7 +44,7 @@ public class SGProSportsPIDTest extends DriverCommonAction {
 	}
 
 	@Test(dataProvider = "ProSportsEmpty", groups = { "SGProSportsEmpty","paymentAll","SGprosportsPaypal","all","AUPayment" ,"prosportsPayment"})
-	public void paymentPaypalTabTest(String url,String pid,String amount) throws Exception {
+	public void SGProSportspaymentPaypalTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=SG";
 		
@@ -66,7 +66,7 @@ public class SGProSportsPIDTest extends DriverCommonAction {
 	
 	
 	@Test(dataProvider = "ProSportsEmpty", groups = { "SGProSportsEmpty","paymentAll","SGprosportsLinks","all","AUPayment" ,"prosportsPayment"})
-	public void paymentLinksTest(String url,String pid,String amount) throws Exception {
+	public void SGProSportspaymentLinksTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=SG";
 		Reporter.log("verification of Term and condition,  Contact US and  Privacy Policy page");	

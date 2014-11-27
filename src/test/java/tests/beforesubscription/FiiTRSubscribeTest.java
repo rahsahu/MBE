@@ -81,7 +81,7 @@ public class FiiTRSubscribeTest extends DriverCommonAction {
 		String winHandleBefore=driver.getWindowHandle();
 		FiiTRPaymentPage np=new FiiTRPaymentPage();
 		
-		Reporter.log("\n<b>Verification of Term and condition page</b>");		
+		MyReporter.log("\n<b>Verification of Term and condition page</b>");		
 		util.findElement(np.termLink).click();
 		
 

@@ -13,7 +13,7 @@ public class NLGPIDTest extends DriverCommonAction {
 	
 
 	@Test(dataProvider = "NLGEMPTY", groups = { "NLGEmpty","paymentAll","NLGMobile","all","AUPayment"})
-	public void paymentMobileTabTest(String url,String pid,String amount) throws Exception {
+	public void NLGpaymentMobileTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		
@@ -41,7 +41,7 @@ public class NLGPIDTest extends DriverCommonAction {
 	}
 
 	@Test(dataProvider = "NLGEMPTY", groups = { "NLGEmpty","paymentAll","NLGPaypal","all","AUPayment" })
-	public void paymentPaypalTabTest(String url,String pid,String amount) throws Exception {
+	public void NLGpaymentPaypalTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		
@@ -63,7 +63,7 @@ public class NLGPIDTest extends DriverCommonAction {
 
 	
 	@Test(dataProvider = "NLGEMPTY", groups = { "NLGEmpty","paymentAll","NLGGoogleWallet","all","AUPayment" })
-	public void paymentGoogleWalletTabTest(String url,String pid,String amount) throws Exception {
+	public void NLGpaymentGoogleWalletTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		
@@ -86,7 +86,7 @@ public class NLGPIDTest extends DriverCommonAction {
 	}
 	
 	@Test(dataProvider = "NLGEMPTY", groups = { "NLGEmpty","paymentAll","NLGLinks","all","AUPayment" })
-	public void paymentLinksTest(String url,String pid,String amount) throws Exception {
+	public void NLGpaymentLinksTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		Reporter.log("verification of Term and condition,  Contact US and  Privacy Policy page");	

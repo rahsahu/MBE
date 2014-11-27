@@ -1,14 +1,19 @@
 package Wrapper;
 
+import java.lang.reflect.Method;
+
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
+
+import com.thoughtworks.selenium.webdriven.commands.IsTextPresent;
 
 
 public class DriverCommonAction {
@@ -42,13 +47,13 @@ public class DriverCommonAction {
 	}
 	
 	@BeforeMethod(groups={"loadDriver"},alwaysRun=true)
-	public void LoadDriverBeforeTest() {
+	public void LoadDriverBeforeTest(Method method) {
 //		System.out.println("Before Metnod is getting called");
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setBrowserName("firefox");
 		capabilities.setPlatform(Platform.WINDOWS);
 		driver = new FirefoxDriver(capabilities);
-		
+		MyReporter.log("Starting Test Method :"+method.getName());
 
 	}
 	
@@ -105,9 +110,12 @@ public class DriverCommonAction {
 
 	}
 	@AfterMethod(alwaysRun=true)
-	public void closeBrowser() {
+	public void closeBrowser(ITestResult result) {
 //		if(driver!=null)
 			 driver.close();
+			 
+			  MyReporter.log("method name:" + result.getMethod().getMethodName());
+			 
 	}
 	
 	@AfterTest(alwaysRun=true)

@@ -13,7 +13,7 @@ public class hmbSubscribeTest extends DriverCommonAction {
 
 	
 
-	@Test(dataProvider = "HotMobileBabesEmpty", groups = { "HotMobileBabesMobileTest","paymentAll","HotMobileBabesMobile","all","AUPayment","HotMobileBabesPayment"})
+	@Test(dataProvider = "HotMobileBabesEmpty", groups = { "HotMobileBabesMobileTest","paymentAll","HotMobileBabesMobile","all","AUPayment","HotMobileBabesPayment","mobiletab"})
 	public void HotMobileBabesSubscribeMobileTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
@@ -36,15 +36,15 @@ public class hmbSubscribeTest extends DriverCommonAction {
 		util.verifyContainText(np.mobileFormP1, np.mobileFormP1Value);
 		util.elementPresent(np.mobileSubmitButton);
 		util.verifyContainText(np.mobileFormP2, np.mobileFormP2Value);
-		util.elementPresent(np.firstTab);
+
 
 	
 	}
 
 
 	
-	@Test(dataProvider = "HotMobileBabesEmpty", groups = { "HotMobileBabesLinksTest","paymentAll","HotMobileBabesLinks","all","AUPayment" ,"HotMobileBabesPayment"})
-	public void paymentLinksTest(String url,String pid,String amount) throws Exception {
+	@Test(dataProvider = "HotMobileBabesEmpty", groups = { "HotMobileBabesLinksTest","paymentAll","HotMobileBabesLinks","all","AUPayment" ,"HotMobileBabesPayment","linksTest"})
+	public void HotMobileBabespaymentLinksTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		Reporter.log("verification of Term and condition,  Contact US and  Privacy Policy page");	

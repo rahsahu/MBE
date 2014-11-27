@@ -28,8 +28,8 @@ public class UtilWrapper {
 
 			endRow = tableEnd.getRow();
 			endCol = tableEnd.getColumn();
-			System.out.println("startRow=" + startRow + ", endRow=" + endRow
-					+ ", " + "startCol=" + startCol + ", endCol=" + endCol);
+//			System.out.println("startRow=" + startRow + ", endRow=" + endRow
+//					+ ", " + "startCol=" + startCol + ", endCol=" + endCol);
 			tabArray = new String[endRow - startRow - 1][endCol - startCol - 1];
 			ci = 0;
 
@@ -40,7 +40,7 @@ public class UtilWrapper {
 				}
 			}
 		} catch (Exception e) {
-			System.out.println("error in getTableArray()");
+			MyReporter.log("error in getTableArray()");
 			e.printStackTrace();
 		}
 

@@ -16,7 +16,7 @@ public class GamesHausPIDTest extends DriverCommonAction {
 	
 
 	@Test(dataProvider = "GamesHausEmpty", groups = { "GamesHausEmpty","paymentAll","GamesHausMobile","all","AUPayment","GamesHausPayment"})
-	public void paymentMobileTabTest(String url,String pid,String amount) throws Exception {
+	public void GamesHauspaymentMobileTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		
@@ -43,7 +43,7 @@ public class GamesHausPIDTest extends DriverCommonAction {
 
 		
 	@Test(dataProvider = "GamesHausEmpty", groups = { "GamesHausEmpty","paymentAll","GamesHausLinks","all","AUPayment" ,"GamesHausPayment"})
-	public void paymentLinksTest(String url,String pid,String amount) throws Exception {
+	public void GamesHauspaymentLinksTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		Reporter.log("verification of Term and condition,  Contact US and  Privacy Policy page");	

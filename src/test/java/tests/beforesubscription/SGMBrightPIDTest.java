@@ -21,7 +21,7 @@ public class SGMBrightPIDTest extends DriverCommonAction {
 	
 
 	@Test(dataProvider = "mBrightEmpty", groups = { "mBrightEmpty","paymentAll","MloveMobile","all","SGPayment"})
-	public void paymentMobileTabTest(String url,String pid,String amount) throws Exception {
+	public void SGMBrightpaymentMobileTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=SG";
 		
@@ -51,7 +51,7 @@ public class SGMBrightPIDTest extends DriverCommonAction {
 
 	
 	@Test(dataProvider = "mBrightEmpty", groups = { "mBrightEmpty","paymentAll","MloveLinks","all","SGPayment" })
-	public void paymentLinksTest(String url,String pid,String amount) throws Exception {
+	public void SGMBrightpaymentLinksTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=SG";
 		Reporter.log("verification of Term and condition,  Contact US and  Privacy Policy page");	

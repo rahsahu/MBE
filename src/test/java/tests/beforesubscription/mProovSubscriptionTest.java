@@ -12,7 +12,7 @@ public class mProovSubscriptionTest extends DriverCommonAction {
 	
 
 	@Test(dataProvider = "mProovEmpty", groups = { "MProovEmpty","paymentAll","MProovMobile","all","Payment"})
-	public void paymentMobileTabTest(String url,String pid,String amount) throws Exception {
+	public void MProovpaymentMobileTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		
@@ -40,7 +40,7 @@ public class mProovSubscriptionTest extends DriverCommonAction {
 	}
 
 	@Test(dataProvider = "mProovEmpty", groups = { "MProovEmpty","paymentAll","MProovPaypal","all","AUPayment" })
-	public void paymentPaypalTabTest(String url,String pid,String amount) throws Exception {
+	public void MProovpaymentPaypalTabTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		
@@ -65,7 +65,7 @@ public class mProovSubscriptionTest extends DriverCommonAction {
 
 	
 	@Test(dataProvider = "mProovEmpty", groups = { "MProovEmpty","paymentAll","MProovLinks","all","AUPayment" })
-	public void paymentLinksTest(String url,String pid,String amount) throws Exception {
+	public void MProovpaymentLinksTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=AU";
 		Reporter.log("verification of Term and condition,  Contact US and  Privacy Policy page");	

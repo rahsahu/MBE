@@ -16,7 +16,7 @@ public class RUNLGSubscribeTest extends DriverCommonAction {
 	
 
 	@Test(dataProvider = "NLGEMPTY", groups = { "RUNLGEmpty","RUpaymentAll","RUNLGMobile","all","RUPayment"})
-	public void paymentMobileTabTest(String url,String pid,String amount) throws Exception {
+	public void RUNLGpaymentMobileTabTest(String url,String pid,String amount) throws Exception {
 		
 	//	new PIDTest().paymentMobileTabTest(url, pid, amount);
 		String aURL = url + "/?pid="+pid+"&territory=RU";
@@ -48,7 +48,7 @@ public class RUNLGSubscribeTest extends DriverCommonAction {
 	}
 	
 	@Test(dataProvider = "NLGEMPTY", groups = { "RUNLGEmpty","RUpaymentAll","RUNLGLinks","all","RUPayment" })
-	public void paymentLinksTest(String url,String pid,String amount) throws Exception {
+	public void RUNLGpaymentLinksTest(String url,String pid,String amount) throws Exception {
 	
 		String aURL = url + "/?pid="+pid+"&territory=RU";
 		Reporter.log("verification of Term and condition,  Contact US and  Privacy Policy page");	

@@ -9,7 +9,7 @@ public class NLGPaymentPage extends BasePaymentPage{
 
 
 	
-	public String mobileNumberTextBoxValue="04";
+	public String mobileNumberTextBoxValue="";
 	public String mobileBeforeMNumTextFieldValue="Subscribe with your Mobile for only $5.00/week";
 	public String mobileFormP1Value="Subscribe to NoLimitsGames for just $5.00/week";
 	public String mobileFormP2Value="Submit your phone number on this page and we'll send you a text message to confirm you wish to subscribe.";		
